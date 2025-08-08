@@ -8,6 +8,7 @@ import { Pricing } from "@/components/bem-estar/Pricing";
 import { Team } from "@/components/bem-estar/Team";
 import { Cta } from "@/components/bem-estar/Cta";
 import { Footer } from "@/components/bem-estar/Footer";
+import { AnimatedSection } from "@/components/bem-estar/AnimatedSection";
 
 const Index = () => {
   return (
@@ -15,13 +16,27 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <TrustedBy />
-        <Sessions />
-        <Testimonials />
-        <HowItWorks />
-        <Pricing />
-        <Team />
-        <Cta />
+        <AnimatedSection>
+          <TrustedBy />
+        </AnimatedSection>
+        <AnimatedSection>
+          <Sessions />
+        </AnimatedSection>
+        <AnimatedSection>
+          <Testimonials />
+        </AnimatedSection>
+        <AnimatedSection>
+          <HowItWorks />
+        </AnimatedSection>
+        <AnimatedSection>
+          <Pricing />
+        </AnimatedSection>
+        <AnimatedSection>
+          <Team />
+        </AnimatedSection>
+        <AnimatedSection>
+          <Cta />
+        </AnimatedSection>
       </main>
       <Footer />
     </div>
