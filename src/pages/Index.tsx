@@ -1,17 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
-
-import { MadeWithDyad } from "@/components/made-with-dyad";
+import { Header } from "@/components/bem-estar/Header";
+import { Hero } from "@/components/bem-estar/Hero";
+import { TrustedBy } from "@/components/bem-estar/TrustedBy";
+import { Sessions } from "@/components/bem-estar/Sessions";
+import { Testimonials } from "@/components/bem-estar/Testimonials";
+import { HowItWorks } from "@/components/bem-estar/HowItWorks";
+import { Pricing } from "@/components/bem-estar/Pricing";
+import { Team } from "@/components/bem-estar/Team";
+import { Cta } from "@/components/bem-estar/Cta";
+import { Footer } from "@/components/bem-estar/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">
-          Start building your amazing project here!
-        </p>
-      </div>
-      <MadeWithDyad />
+    <div className="bg-background text-foreground">
+      <Header />
+      <main>
+        <Hero />
+        <TrustedBy />
+        <Sessions />
+        <Testimonials />
+        <HowItWorks />
+        <Pricing />
+        <Team />
+        <Cta />
+      </main>
+      <Footer />
     </div>
   );
 };
