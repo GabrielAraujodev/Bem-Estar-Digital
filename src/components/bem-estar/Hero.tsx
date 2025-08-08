@@ -2,13 +2,18 @@ import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
   return (
-    <section id="home" className="relative h-[80vh] min-h-[500px] flex items-center justify-center text-white">
+    <section id="home" className="relative h-[80vh] min-h-[500px] flex items-center justify-center text-white overflow-hidden">
       <div className="absolute inset-0 bg-black/50 z-10" />
-      <img
-        src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=2041&auto=format&fit=crop"
-        alt="Paisagem relaxante brasileira com cachoeira"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source src="https://videos.pexels.com/video-files/853877/853877-hd_1920_1080_25fps.mp4" type="video/mp4" />
+        Seu navegador não suporta a tag de vídeo.
+      </video>
       <div className="container relative z-20 text-center">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
           Encontre a Paz Interior no Mundo Digital.
