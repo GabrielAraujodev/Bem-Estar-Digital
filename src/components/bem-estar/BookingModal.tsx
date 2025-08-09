@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { showError } from "@/utils/toast";
 
 interface Plan {
   name: string;
@@ -17,37 +16,23 @@ interface Plan {
   description: string;
 }
 
-interface Session {
-    title: string;
-    description:string;
-    price: string;
-    duration: string;
-}
-
 interface BookingModalProps {
   plan?: Plan;
-  session?: Session;
 }
 
-export const BookingModal = ({ plan, session }: BookingModalProps) => {
+export const BookingModal = ({ plan }: BookingModalProps) => {
   const [whatsappNumber, setWhatsappNumber] = useState("");
-
-  const item = plan 
-    ? { name: plan.name, description: plan.description, price: plan.price } 
-    : session 
-    ? { name: session.title, description: session.description, price: session.price } 
-    : null;
 
   const handleSchedule = () => {
     if (whatsappNumber.replace(/\D/g, '').length >= 10) {
       const message = encodeURIComponent(
-        `Olá! Gostaria de agendar uma sessão para ${item ? item.name : 'o plano de bem-estar'}.`
+        `Olá! Gostaria de agendar uma sessão para o ${plan ? plan.name : 'plano de bem-estar'}.`
       );
       // IMPORTANTE: Substitua pelo número de WhatsApp do seu negócio.
       const businessWhatsappNumber = "5511999999999"; 
       window.open(`https://wa.me/${businessWhatsappNumber}?text=${message}`, "_blank");
     } else {
-      showError("Por favor, insira um número de WhatsApp válido.");
+      alert("Por favor, insira um número de WhatsApp válido.");
     }
   };
 
@@ -56,17 +41,17 @@ export const BookingModal = ({ plan, session }: BookingModalProps) => {
       <DialogHeader>
         <DialogTitle>Agende sua Sessão</DialogTitle>
         <DialogDescription>
-          {item
-            ? `Você selecionou ${item.name}. Preencha seu WhatsApp para agendarmos.`
+          {plan
+            ? `Você selecionou o ${plan.name}. Preencha seu WhatsApp para agendarmos.`
             : "Preencha seu WhatsApp para agendarmos sua sessão inicial."}
         </DialogDescription>
       </DialogHeader>
-      {item && (
+      {plan && (
         <div className="my-4">
           <div className="p-4 bg-muted rounded-lg border">
-            <h4 className="font-semibold">{item.name}</h4>
-            <p className="text-sm text-muted-foreground mt-1">{item.description}</p>
-            {item.price && <p className="text-lg font-bold mt-2">{session ? item.price : `${item.price}/mês`}</p>}
+            <h4 className="font-semibold">{plan.name}</h4>
+            <p className="text-sm text-muted-foreground mt-1">{plan.description}</p>
+            <p className="text-lg font-bold mt-2">{plan.price}/mês</p>
           </div>
         </div>
       )}

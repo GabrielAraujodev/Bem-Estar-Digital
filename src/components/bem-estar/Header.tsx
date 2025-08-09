@@ -1,5 +1,3 @@
-import { useState } from "react";
-import type { MouseEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Leaf } from "lucide-react";
@@ -7,8 +5,6 @@ import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { BookingModal } from "./BookingModal";
 
 export const Header = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const navLinks = [
     { label: "Início", href: "#home" },
     { label: "Sessões", href: "#sessoes" },
@@ -20,19 +16,10 @@ export const Header = () => {
     { label: "Equipe", href: "#equipe" },
   ];
 
-  const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const section = document.querySelector(href);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-    setIsMobileMenuOpen(false);
-  };
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm">
       <div className="container mx-auto flex h-16 items-center justify-between">
-        <a href="#home" onClick={(e) => handleNavClick(e, "#home")} className="flex items-center gap-2">
+        <a href="#home" className="flex items-center gap-2">
           <Leaf className="h-8 w-8 text-emerald-500" />
           <span className="font-bold text-lg text-emerald-600">
             Bem-Estar Digital
@@ -43,7 +30,6 @@ export const Header = () => {
             <a
               key={link.label}
               href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
               className="text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.label}
@@ -58,7 +44,7 @@ export const Header = () => {
             <BookingModal />
           </Dialog>
         </div>
-        <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+        <Sheet>
           <SheetTrigger asChild>
             <Button variant="outline" size="icon" className="md:hidden">
               <Menu className="h-6 w-6" />
@@ -71,7 +57,6 @@ export const Header = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
                   className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
                 >
                   {link.label}
