@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
+import { BookingModal } from "./BookingModal";
 
 export const Hero = () => {
   return (
@@ -9,24 +11,26 @@ export const Hero = () => {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        className="absolute z-0 w-auto min-w-full min-h-full max-w-none"
       >
-        <source src="https://videos.pexels.com/video-files/853877/853877-hd_1920_1080_25fps.mp4" type="video/mp4" />
-        Seu navegador não suporta a tag de vídeo.
+        <source src="https://videos.pexels.com/video-files/4784833/4784833-hd_1920_1080_25fps.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
       </video>
-      <div className="container relative z-20 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-          Encontre a Paz Interior no Mundo Digital.
+      <div className="relative z-20 container text-center">
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
+          Encontre seu Equilíbrio com o <span className="text-emerald-400">Bem-Estar Digital</span>
         </h1>
-        <h2 className="text-2xl md:text-4xl font-light mt-2">
-          Meditação e Mindfulness para Brasileiros
-        </h2>
-        <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-gray-200">
-          Reduza o estresse, melhore o foco e aumente sua qualidade de vida com nossos programas personalizados.
+        <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl">
+          Sua jornada para uma vida mais calma, focada e feliz começa aqui. Meditações guiadas, exercícios de respiração e muito mais.
         </p>
-        <Button size="lg" className="mt-8 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-lg px-8 py-6">
-          Experimente Grátis por 7 Dias
-        </Button>
+        <div className="mt-8">
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button size="lg" className="text-lg px-8 py-6">Comece Agora</Button>
+            </DialogTrigger>
+            <BookingModal />
+          </Dialog>
+        </div>
       </div>
     </section>
   );
