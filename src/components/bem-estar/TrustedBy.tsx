@@ -15,7 +15,7 @@ export const TrustedBy = () => {
         <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
           {logos.map((logo) => (
             <div key={logo.name} className="flex justify-center">
-              <img src={logo.src} alt={logo.name} className="h-16 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
+              <img src={logo.src} alt={logo.name} className="h-20 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
             </div>
           ))}
         </div>
