@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { showError } from "@/utils/toast";
 
 interface Plan {
   name: string;
@@ -18,7 +19,7 @@ interface Plan {
 
 interface Session {
     title: string;
-    description: string;
+    description:string;
     price: string;
     duration: string;
 }
@@ -46,7 +47,7 @@ export const BookingModal = ({ plan, session }: BookingModalProps) => {
       const businessWhatsappNumber = "5511999999999"; 
       window.open(`https://wa.me/${businessWhatsappNumber}?text=${message}`, "_blank");
     } else {
-      alert("Por favor, insira um número de WhatsApp válido.");
+      showError("Por favor, insira um número de WhatsApp válido.");
     }
   };
 
