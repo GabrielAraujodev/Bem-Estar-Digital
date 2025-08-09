@@ -48,7 +48,7 @@ export const Footer = () => {
           <p className="text-sm text-muted-foreground order-2 sm:order-1">
             &copy; {new Date().getFullYear()} BemEstar Digital. Todos os direitos reservados.
           </p>
-          <div className="flex items-center space-x-4 order-1 sm:order-2">
+          <div className="flex items-center space-x-12 order-1 sm:order-2">
             {socials.map((social) => (
               <a
                 key={social.name}
