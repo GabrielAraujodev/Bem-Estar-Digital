@@ -11,7 +11,7 @@ export const Hero = () => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-0"
       >
-        <source src="https://videos.pexels.com/video-files/5473759/5473759-hd_1920_1080_25fps.mp4" type="video/mp4" />
+        <source src="https://videos.pexels.com/video-files/4782135/4782135-hd_1920_1080_25fps.mp4" type="video/mp4" />
         Seu navegador não suporta a tag de vídeo.
       </video>
       <div className="container relative z-20 text-center">
