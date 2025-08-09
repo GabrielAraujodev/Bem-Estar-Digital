@@ -8,10 +8,11 @@ export const Header = () => {
   const navLinks = [
     { label: "Início", href: "#home" },
     { label: "Sessões", href: "#sessoes" },
-    { label: "Depoimentos", href: "#depoimentos" },
     { label: "Como Funciona", href: "#como-funciona" },
-    { label: "Materiais", href: "#materiais" },
     { label: "Planos", href: "#planos" },
+    { label: "Materiais", href: "#materiais" },
+    { label: "Depoimentos", href: "#depoimentos" },
+    { label: "FAQ", href: "#faq" },
     { label: "Equipe", href: "#equipe" },
   ];
 

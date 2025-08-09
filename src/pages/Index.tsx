@@ -10,6 +10,7 @@ import { Cta } from "@/components/bem-estar/Cta";
 import { Footer } from "@/components/bem-estar/Footer";
 import { AnimatedSection } from "@/components/bem-estar/AnimatedSection";
 import { FreeMaterials } from "@/components/bem-estar/FreeMaterials";
+import { Faq } from "@/components/bem-estar/Faq";
 
 const Index = () => {
   return (
@@ -34,6 +35,9 @@ const Index = () => {
         </AnimatedSection>
         <AnimatedSection>
           <Pricing />
+        </AnimatedSection>
+        <AnimatedSection>
+          <Faq />
         </AnimatedSection>
         <AnimatedSection>
           <Team />
