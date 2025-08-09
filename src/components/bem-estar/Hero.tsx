@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 export const Hero = () => {
   return (
     <section id="home" className="relative h-[80vh] min-h-[500px] flex items-center justify-center text-white overflow-hidden">
-      <div className="absolute inset-0 bg-black/50 z-10" />
+      <div className="absolute inset-0 bg-black/60 z-10" />
       <video
         autoPlay
         loop
@@ -11,7 +11,7 @@ export const Hero = () => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-0"
       >
-        <source src="https://videos.pexels.com/video-files/853877/853877-hd_1920_1080_25fps.mp4" type="video/mp4" />
+        <source src="https://videos.pexels.com/video-files/5473759/5473759-hd_1920_1080_25fps.mp4" type="video/mp4" />
         Seu navegador não suporta a tag de vídeo.
       </video>
       <div className="container relative z-20 text-center">
