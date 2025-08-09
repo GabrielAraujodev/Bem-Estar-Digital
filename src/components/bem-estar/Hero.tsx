@@ -11,7 +11,7 @@ export const Hero = () => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-0"
       >
-        <source src="/4782135-hd_1920_1080_25fps.mp4" type="video/mp4" />
+        <source src="public/video.mp4" type="video/mp4" />
         Seu navegador não suporta a tag de vídeo.
       </video>
       <div className="container relative z-20 text-center">
@@ -24,8 +24,8 @@ export const Hero = () => {
         <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-gray-200">
           Reduza o estresse, melhore o foco e aumente sua qualidade de vida com nossos programas personalizados.
         </p>
-        <Button asChild size="lg" className="mt-8 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-lg px-8 py-6">
-          <a href="#planos">Experimente Grátis por 7 Dias</a>
+        <Button size="lg" className="mt-8 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-lg px-8 py-6">
+          Experimente Grátis por 7 Dias
         </Button>
       </div>
     </section>
