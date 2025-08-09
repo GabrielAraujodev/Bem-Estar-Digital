@@ -1,8 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
+import { BookingModal } from "./BookingModal";
 
-const plans = [
+interface Plan {
+  name: string;
+  price: string;
+  description: string;
+  features: string[];
+  buttonText: string;
+  highlighted: boolean;
+}
+
+const plans: Plan[] = [
   {
     name: "Plano Essencial",
     price: "R$29,90",
@@ -56,26 +67,31 @@ export const Pricing = () => {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           {plans.map((plan) => (
-            <Card key={plan.name} className={`flex flex-col h-full ${plan.highlighted ? "border-2 border-emerald-500 shadow-xl" : ""}`}>
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl">{plan.name}</CardTitle>
-                <CardDescription>{plan.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-grow flex flex-col items-center">
-                <p className="text-4xl font-bold mb-2">{plan.price}<span className="text-lg font-normal text-muted-foreground">/mês</span></p>
-                <ul className="mt-6 space-y-3 text-left w-full">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-start">
-                      <Check className="h-5 w-5 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-              <CardFooter className="mt-auto">
-                <Button className="w-full" variant={plan.highlighted ? "default" : "outline"}>{plan.buttonText}</Button>
-              </CardFooter>
-            </Card>
+            <Dialog key={plan.name}>
+              <Card className={`flex flex-col h-full ${plan.highlighted ? "border-2 border-emerald-500 shadow-xl" : ""}`}>
+                <CardHeader className="text-center">
+                  <CardTitle className="text-2xl">{plan.name}</CardTitle>
+                  <CardDescription>{plan.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow flex flex-col items-center">
+                  <p className="text-4xl font-bold mb-2">{plan.price}<span className="text-lg font-normal text-muted-foreground">/mês</span></p>
+                  <ul className="mt-6 space-y-3 text-left w-full">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-start">
+                        <Check className="h-5 w-5 text-green-500 mr-2 mt-1 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardFooter className="mt-auto">
+                  <DialogTrigger asChild>
+                    <Button className="w-full" variant={plan.highlighted ? "default" : "outline"}>{plan.buttonText}</Button>
+                  </DialogTrigger>
+                </CardFooter>
+              </Card>
+              <BookingModal plan={plan} />
+            </Dialog>
           ))}
         </div>
       </div>

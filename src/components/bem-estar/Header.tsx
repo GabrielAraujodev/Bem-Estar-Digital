@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Leaf } from "lucide-react";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
+import { BookingModal } from "./BookingModal";
 
 export const Header = () => {
   const navLinks = [
@@ -34,7 +36,12 @@ export const Header = () => {
           ))}
         </nav>
         <div className="hidden md:block">
-          <Button>Agende sua Sessão</Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button>Agende sua Sessão</Button>
+            </DialogTrigger>
+            <BookingModal />
+          </Dialog>
         </div>
         <Sheet>
           <SheetTrigger asChild>
@@ -54,6 +61,12 @@ export const Header = () => {
                   {link.label}
                 </a>
               ))}
+               <Dialog>
+                <DialogTrigger asChild>
+                  <Button>Agende sua Sessão</Button>
+                </DialogTrigger>
+                <BookingModal />
+              </Dialog>
             </nav>
           </SheetContent>
         </Sheet>
