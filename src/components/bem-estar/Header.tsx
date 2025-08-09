@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, Leaf } from "lucide-react";
 
 export const Header = () => {
   const navLinks = [
@@ -17,7 +17,7 @@ export const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm">
       <div className="container mx-auto flex h-16 items-center justify-between">
         <a href="#home" className="flex items-center gap-2">
-          <img src="/logo.svg" alt="Bem-Estar Digital Logo" className="h-8 w-8" />
+          <Leaf className="h-8 w-8 text-emerald-500" />
           <span className="font-bold text-lg text-emerald-600">
             Bem-Estar Digital
           </span>
