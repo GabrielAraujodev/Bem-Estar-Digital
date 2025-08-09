@@ -9,6 +9,7 @@ import { Team } from "@/components/bem-estar/Team";
 import { Cta } from "@/components/bem-estar/Cta";
 import { Footer } from "@/components/bem-estar/Footer";
 import { AnimatedSection } from "@/components/bem-estar/AnimatedSection";
+import { FreeMaterials } from "@/components/bem-estar/FreeMaterials";
 
 const Index = () => {
   return (
@@ -27,6 +28,9 @@ const Index = () => {
         </AnimatedSection>
         <AnimatedSection>
           <HowItWorks />
+        </AnimatedSection>
+        <AnimatedSection>
+          <FreeMaterials />
         </AnimatedSection>
         <AnimatedSection>
           <Pricing />
