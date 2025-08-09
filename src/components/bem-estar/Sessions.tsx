@@ -1,5 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { HeartPulse, BrainCircuit, Moon, Users } from "lucide-react";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
+import { BookingModal } from "./BookingModal";
 
 const sessions = [
   {
@@ -44,19 +46,24 @@ export const Sessions = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {sessions.map((session) => (
-            <Card key={session.title} className="flex flex-col text-center items-center p-6 hover:shadow-lg transition-shadow">
-              <CardHeader>
-                {session.icon}
-                <CardTitle className="mt-4">{session.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <p className="text-muted-foreground">{session.description}</p>
-              </CardContent>
-              <div className="mt-4">
-                <p className="font-semibold">{session.duration}</p>
-                <p className="text-lg font-bold text-emerald-600">{session.price}</p>
-              </div>
-            </Card>
+            <Dialog key={session.title}>
+              <DialogTrigger asChild>
+                <Card className="flex flex-col text-center items-center p-6 hover:shadow-lg cursor-pointer transition-transform duration-300 hover:scale-105">
+                  <CardHeader>
+                    {session.icon}
+                    <CardTitle className="mt-4">{session.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <p className="text-muted-foreground">{session.description}</p>
+                  </CardContent>
+                  <div className="mt-4">
+                    <p className="font-semibold">{session.duration}</p>
+                    <p className="text-lg font-bold text-emerald-600">{session.price}</p>
+                  </div>
+                </Card>
+              </DialogTrigger>
+              <BookingModal session={session} />
+            </Dialog>
           ))}
         </div>
       </div>
