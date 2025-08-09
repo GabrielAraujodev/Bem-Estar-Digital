@@ -18,7 +18,7 @@ const weeklyActivities = [
 
 export const HowItWorks = () => {
   return (
-    <section className="py-12 lg:py-24">
+    <section id="como-funciona" className="py-12 lg:py-24">
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">Como Funciona</h2>
