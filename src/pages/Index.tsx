@@ -11,10 +11,12 @@ import { Footer } from "@/components/bem-estar/Footer";
 import { AnimatedSection } from "@/components/bem-estar/AnimatedSection";
 import { FreeMaterials } from "@/components/bem-estar/FreeMaterials";
 import { Faq } from "@/components/bem-estar/Faq";
+import { InteractiveDashboardPreview } from "@/components/bem-estar/InteractiveDashboardPreview";
 
 const Index = () => {
   return (
-    <div className="bg-background text-foreground">
+    <div className="bg-black text-foreground relative">
+      <div className="fixed inset-0 noise-bg z-[100] pointer-events-none" />
       <Header />
       <main>
         <Hero />
@@ -23,6 +25,9 @@ const Index = () => {
         </AnimatedSection>
         <AnimatedSection>
           <Sessions />
+        </AnimatedSection>
+        <AnimatedSection>
+          <InteractiveDashboardPreview />
         </AnimatedSection>
         <AnimatedSection>
           <Testimonials />
